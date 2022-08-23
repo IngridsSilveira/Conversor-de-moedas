@@ -2,7 +2,10 @@ import javax.swing.JOptionPane;
 
 public class Conversor {
 	public static void main(String[] args) {
-		
+		convertendo();
+	}
+	
+	public static Object convertendo() {
 		String TiposDeMoedas;
 		TiposDeMoedas = JOptionPane.showInputDialog("Escolha a opção de conversão desejada: "
 				+ "\n1 - Reais para Euros; "
@@ -29,26 +32,9 @@ public class Conversor {
 			
 			msg = "O valor em Euro é: " + valorConvertido;
 			
-			String msg2 = "Deseja continuar?";
-			
 			JOptionPane.showMessageDialog(null, msg);
 			
-			int teste = JOptionPane.showConfirmDialog(null, msg2);
-			
-			if(teste == JOptionPane.YES_OPTION)
-			{
-				JOptionPane.showMessageDialog(null, "Programa retornado");
-			}
-			
-			else if(teste == JOptionPane.NO_OPTION)
-			{
-				JOptionPane.showMessageDialog(null, "Programa finalizado");
-			}
-			else if(teste == JOptionPane.CANCEL_OPTION)
-			{
-				JOptionPane.showMessageDialog(null, "Programa concluído");
-			}
-			
+			continuar();
 		} 
 		
 		else if (opcao == 2) {
@@ -58,6 +44,7 @@ public class Conversor {
 			double valorConvertido = valorReal * dolar;
 			msg = "O valor em Dólar é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
 		}
 		else if (opcao == 3) {
 			valor = JOptionPane.showInputDialog("Digite o valor em reais que deseja converter para Peso Argentino:");
@@ -66,6 +53,7 @@ public class Conversor {
 			double valorConvertido = valorReal * argentino;
 			msg = "O valor em Peso Argentino é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
 		}
 		else if (opcao == 4) {
 			valor = JOptionPane.showInputDialog("Digite o valor em reais que deseja converter para Peso Chileno:");
@@ -74,6 +62,7 @@ public class Conversor {
 			double valorConvertido = valorReal * chileno;
 			msg = "O valor em Peso Chileno é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
 		}
 		else if (opcao == 5) {
 			valor = JOptionPane.showInputDialog("Digite o valor em Euros que deseja converter para Reais:");
@@ -82,6 +71,7 @@ public class Conversor {
 			double valorConvertido = valorEuro * reais;
 			msg = "O valor em Reais é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
 		}
 		else if (opcao == 6) {
 			valor = JOptionPane.showInputDialog("Digite o valor em Dólares que deseja converter para Reais:");
@@ -90,6 +80,7 @@ public class Conversor {
 			double valorConvertido = valorDolar * reais;
 			msg = "O valor em Reais é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
 		}
 		else if (opcao == 7) {
 			valor = JOptionPane.showInputDialog("Digite o valor em Peso Argentino que deseja converter para Reais:");
@@ -98,6 +89,7 @@ public class Conversor {
 			double valorConvertido = valorArgentino * reais;
 			msg = "O valor em Reais é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
 		}
 		else if (opcao == 8) {
 			valor = JOptionPane.showInputDialog("Digite o valor em Peso Chileno que deseja converter para Reais:");
@@ -106,6 +98,29 @@ public class Conversor {
 			double valorConvertido = valorChileno * reais;
 			msg = "O valor em Reais é: " + valorConvertido;
 			JOptionPane.showMessageDialog(null, msg);
+			continuar();
+		}
+		return null;
+	}
+	
+	public static void continuar() {
+
+		String msg2 = "Deseja continuar?";
+		
+		int teste = JOptionPane.showConfirmDialog(null, msg2);
+		
+		if(teste == JOptionPane.YES_OPTION)
+		{
+			JOptionPane.showMessageDialog(null, convertendo());
+		}
+		
+		else if(teste == JOptionPane.NO_OPTION)
+		{
+			JOptionPane.showMessageDialog(null, "Programa finalizado");
+		}
+		else if(teste == JOptionPane.CANCEL_OPTION)
+		{
+			JOptionPane.showMessageDialog(null, "Programa concluído");
 		}
 	}
 }
