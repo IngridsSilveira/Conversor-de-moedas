@@ -5,7 +5,7 @@ public class Conversor {
 		convertendo();
 	}
 	
-	public static Object convertendo() {
+	public static void convertendo() {
 		String TiposDeMoedas;
 		TiposDeMoedas = JOptionPane.showInputDialog("Escolha a opção de conversão desejada: "
 				+ "\n1 - Reais para Euros; "
@@ -100,7 +100,6 @@ public class Conversor {
 			JOptionPane.showMessageDialog(null, msg);
 			continuar();
 		}
-		return null;
 	}
 	
 	public static void continuar() {
@@ -111,7 +110,7 @@ public class Conversor {
 		
 		if(teste == JOptionPane.YES_OPTION)
 		{
-			JOptionPane.showMessageDialog(null, convertendo());
+			convertendo();
 		}
 		
 		else if(teste == JOptionPane.NO_OPTION)
